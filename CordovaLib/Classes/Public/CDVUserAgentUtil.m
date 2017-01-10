@@ -90,6 +90,10 @@ static NSMutableArray* gPendingSetUserAgentBlocks = nil;
 
 + (void)releaseLock:(NSInteger*)lockToken
 {
+    if (lockToken == nil) {
+        return;
+    }
+    
     if (*lockToken == 0) {
         return;
     }
